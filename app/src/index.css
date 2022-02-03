@@ -2,10 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: IRANSans-web;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../resources/IRANSansWebFaNum-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../resources/IRANSansWebFaNum-Bold.woff") format("woff"),
+    url("../resources/IRANSansWebFaNum-Bold.woff2") format("woff2"),
+    url("../resources/IRANSansWebFaNum-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANSans-web;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../resources/IRANSansWebFaNum-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../resources/IRANSansWebFaNum-Light.woff") format("woff"),
+    url("../resources/IRANSansWebFaNum-Light.woff2") format("woff2"),
+    url("../resources/IRANSansWebFaNum-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANSans-web;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../resources/IRANSansWebFaNum-UltraLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("../resources/IRANSansWebFaNum-UltraLight.woff") format("woff"),
+    url("../resources/IRANSansWebFaNum-UltraLight.woff2") format("woff2"),
+    url("../resources/IRANSansWebFaNum-UltraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANSans-web;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../resources/IRANSansWebFaNum.eot?#iefix")
+      format("embedded-opentype"),
+    url("../resources/IRANSansWebFaNum.woff") format("woff"),
+    url("../resources/IRANSansWebFaNum.woff2") format("woff2"),
+    url("../resources/IRANSansWebFaNum.ttf") format("truetype");
+}
+
 body {
   min-height: 100vh;
 }
 
 #root {
   min-height: 100vh;
+}
+
+.input {
+  @apply p-2 border-neutral-600 border-2 rounded-md focus:focus-visible:border-sky-500 focus:border-sky-500
+          focus:focus-visible:border-2 focus:focus-visible:rounded-md focus-visible:border-sky-500 focus-visible:outline-none
+          focus:placeholder:text-blue-400 text-slate-600;
 }

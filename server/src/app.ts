@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { config } from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import createError from "http-errors";
 import logger from "morgan";
@@ -11,9 +12,13 @@ import { usersRouter } from "./routes/users";
 export const app = express();
 export const prisma = new PrismaClient();
 
+config();
+
+app.use(express.static("src/public"));
+
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
